@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.robots {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 10px;
+	background-color: rgba(255, 255, 0, 0.3);
+}
+
+.head, 
+.left_arm, 
+.torso, 
+.right_arm, 
+.left_leg, 
+.right_leg {
+	 background-color: rgba(95, 147, 232, 1.0);
+}
+
+.head { 
+	display: flex;
+	width: 200px; 
+	height: 150px; 
+	border-radius: 200px 200px 0px 0px; 
+	margin: 0px auto 10px;
+	transition: width 1s ease-in, background-color 6s, transform 1s linear;
+} 
+
+.eyes {
+	display: flex;
+}
+
+.head:hover {
+	width: 300px;
+	background-color: red;
+	transform: translate3d(40px, 9px, 0px);
+}
+
+.upper_body { 
+	display: flex;
+	width: 300px; 
+	height: 150px;
+} 
+
+.left_arm, .right_arm { 
+	width: 40px; 
+	height: 125px;
+	border-radius: 100px; 
+} 
+
+.left_arm { 
+	margin-right: 10px; 
+	transition: transform 3s, color 3s;
+} 
+
+.right_arm { 
+	margin-left: 10px;
+	transition: transform 3s; 
+} 
+
+.torso { 
+	width: 200px; 
+	height: 200px;
+	border-radius: 0 0 50px 50px; 
+	transition: transform 0.5s, border-radius 0.5s;
+} 
+
+.torso:hover {
+	transform: scale(1.2);
+	border-radius: 300px;
+}
+
+@keyframes left_arm {
+  from {transform: rotate(0deg) scale(1) translateY(0%) translateX(0%);}
+  to {transform: rotate(160deg) scale(1) translateY(40%) translateX(0%);}
+}
+
+.left_arm:hover {
+/*  transform: rotate(130deg) scale(1) translateY(30%) translateX(0%);*/
+    animation: left_arm 1s linear 0s infinite alternate;
+}
+
+.right_arm:hover {
+    transform: rotate3d(1, 0, 1, -45deg);
+}
+
+.lower_body { 
+	display: flex;
+	align-items: center;
+  	width: 200px; 
+	height: 130px;
+	margin: 30px auto 0px;
+} 
+
+
+.left_leg, .right_leg { 
+	width: 40px; 
+	height: 120px;
+	border-radius: 0 0 100px 100px; 
+} 
+
+.left_leg { 
+	margin-left: 45px; 
+} 
+
+.left_leg:hover {
+    transform: rotate(20deg);
+}
+
+.right_leg { 
+	margin-left: 30px; 
+}
+
+.right_leg:hover {
+    transform: rotate(-20deg);
+}
+
+.left_eye, .right_eye { 
+	width: 20px; 
+	height: 20px; 
+	border-radius: 15px; 
+	background-color: white;  
+} 
+
+
+@keyframes left_eye {
+  from {transform: scaleY(1.0);}
+  to {transform: scaleY(0.1);}
+}
+
+.left_eye { 
+	position: relative; 
+	top: 80px; 
+	left: 30px;
+	transition: background-color 2s, transform 2s; 
+	animation: left_eye 2s linear 2s 10 alternate;
+} 
+
+.left_eye:hover, .right_eye:hover {
+	background-color: rgba(0, 230, 0, 1.0);
+	transform: scaleY(0.1);
+}
+
+.right_eye { 
+	position: relative; 
+	top: 80px; 
+	left: 100px; 
+	transition: background-color 2s, transform 2s;
+}
+
+.mouth {
+	width: 30px; 
+	height: 10px; 
+	border-radius: 0px; 
+	background-color: white;
+	position: relative;
+	left: 65px;
+	top: 120px;
+	transition: transform 2s, border-radius 2s;
+}
+
+.mouth:hover {
+	transform: scale(2.0);
+	border-radius: 0px 0px 20px 20px;
+}
+
+
+
+
